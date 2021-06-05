@@ -82,3 +82,4 @@ def thinkForFunction(text):
 
 def waitFunction(text):
     sec = getWaitTime(text)
+    time.sleep(sec)
