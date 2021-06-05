@@ -33,7 +33,7 @@ def setYFunction(text):
 
 pen = turtle.Turtle()
 pen.hideturtle()
-pen.fillcolor('green')
+pen.fillcolor('purple')
 
 button_x = 510
 button_y = 350
@@ -52,7 +52,7 @@ def drawWord(text):
     pen.write(text, font=("Courier", "14", "bold"), align="left")
 
 def sayFunction(text):
-    word = sayWord(text)
+    word = sayOrThinkWord(text)
     drawWord(word)
     time.sleep(1)
     pen.clear()
@@ -60,9 +60,21 @@ def sayFunction(text):
 
 
 def sayForFunction(text):
-    word = sayForWord(text)
-    sec = sayForSec(text)
+    word = sayOrThinkForWord(text)
+    sec = sayOrThinkForSec(text)
     drawWord(word)
     time.sleep(sec)
     pen.clear()
 
+def thinkFunction(text):
+    word = sayOrThinkWord(text)
+    drawWord(word)
+    time.sleep(1)
+    pen.clear()
+
+def thinkForFunction(text):
+    word = sayOrThinkForWord(text)
+    sec = sayOrThinkForSec(text)
+    drawWord(word)
+    time.sleep(sec)
+    pen.clear()
