@@ -43,4 +43,30 @@ def getXOrYToChangeByOrToBeSet(text):
     while text[index] != '_':
         num = text[index] + num
         index -= 1
-    return int(num) 
+    return int(num)
+
+
+def sayOrThinkWord(text):
+    index = 0
+    word = ''
+    while index < len(text):
+        if text[index] == '_'
+            index += 1
+            while index < len(text):
+                word += text[index]
+                index += 1
+        index += 1
+    return word
+    
+
+def sayOrThinkForWord(text):
+    index = 0
+    word = ''
+    while index < len(text):
+        if text[index] == '_'
+            index += 1
+            while index < text[index] != '_':
+                word += text[index]
+                index += 1
+        index += 1
+    return word

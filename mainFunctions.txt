@@ -1,5 +1,68 @@
+import time
 def moveFunction(text):
     numOfSteps = getNumberOfSteps(text)
     t.fd(numOfSteps)
-    
+
+def turnRightFunction(text):
+    degrees = getDegrees(text)
+    t.right(degrees)
+
+def goToFunction(text):
+    x = getXToGoTo(text)
+    y = getYToGoTo(text)
+    t.goto(x,y)
+
+def changeXByFunction(text):
+    x = getXOrYToChangeByOrToBeSet(text)
+    t.fd(x)
+
+def setXFunction(text):
+    x = getXOrYToChangeByOrToBeSet(text)
+    t.setx(x)
+
+def changeYByFunction(text):
+    y = getXOrYToChangeByOrToBeSet(text)
+    t.up(y)
+
+def setYFunction(text):
+    y = getXOrYToChangeByOrToBeSet(text)
+    t.sety(y)
+
+
+
+
+pen = turtle.Turtle()
+pen.hideturtle()
+pen.fillcolor('green')
+
+button_x = 510
+button_y = 350
+buttonLength = 100
+buttonWidth = 50
+
+def drawWord(text):
+    pen.penup()
+    pen.begin_fill()
+    pen.goto(button_x,button_y)
+    pen.goto(button_x + buttonLength, button_y)
+    pen.goto(button_x + buttonLength, button_y + buttonWidth)
+    pen.goto(button_x, button_y + buttonWidth)
+    pen.goto(button_x, button_y)
+    pen.end_fill()
+    pen.write(text, font=("Courier", "14", "bold"), align="left")
+
+def sayFunction(text):
+    word = sayWord(text)
+    drawWord(word)
+    time.sleep(1)
+    pen.clear()
+
+
+
+def sayForFunction(text):
+    word = sayForWord(text)
+    sec = sayForSec(text)
+    drawWord(word)
+    time.sleep(sec)
+    pen.clear()
 
