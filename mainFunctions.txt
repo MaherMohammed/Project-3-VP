@@ -78,3 +78,7 @@ def thinkForFunction(text):
     drawWord(word)
     time.sleep(sec)
     pen.clear()
+
+
+def waitFunction(text):
+    sec = getWaitTime(text)
