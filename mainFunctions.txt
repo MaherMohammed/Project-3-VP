@@ -1,0 +1,5 @@
+def moveFunction(text):
+    numOfSteps = getNumberOfSteps(text)
+    t.fd(numOfSteps)
+    
+

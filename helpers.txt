@@ -1,0 +1,46 @@
+def getNumberOfSteps(text):
+    index = len(text)-7
+    num = ''
+    while text[index] != '_':
+        num = text[index] + num
+        index -= 1
+    return int(num)
+    
+## get degrees
+def getDegrees(text):
+    index = len(text)-9
+    num = ''
+    while text[index] != '_':
+        num = text[index] + num
+        index -= 1
+    return int(num)
+    
+def getXToGoTo(text):
+    index = 0
+    num = ''
+    while index < len(text):
+        if text[index] == 'x':
+            #print('x')
+            index += 2
+            while text[index] != '_':
+                num += text[index]
+                index += 1
+            break
+        index += 1
+    return int(num)
+    
+def getYToGoTo(text):
+    index = len(text) - 1
+    num = ''
+    while text[index] != '_':
+        num = text[index] + num
+        index -= 1
+    return int(num)
+    
+def getXOrYToChangeByOrToBeSet(text):
+    index = len(text) - 1
+    num = ''
+    while text[index] != '_':
+        num = text[index] + num
+        index -= 1
+    return int(num) 
