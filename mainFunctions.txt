@@ -32,7 +32,6 @@ t.color('purple')
 
 def moveFunction(text):
     numOfSteps = getNumberOfSteps(text)
-    print(numOfSteps)
     t.fd(numOfSteps)
 
 def turnRightFunction(text):
