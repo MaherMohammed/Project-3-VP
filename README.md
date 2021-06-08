@@ -26,4 +26,4 @@
 
 # Sample screen:
 
-![image](1.jpg?raw=true "Implemented Scratch with Turtle python")
+![image]()
