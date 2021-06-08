@@ -1,3 +1,9 @@
+import turtle
+import keyboard
+import time
+from waiting import wait
+gfClicked = False
+
 def getNumberOfSteps(text):
     index = len(text)-7
     num = ''
@@ -46,38 +52,47 @@ def getXOrYToChangeByOrToBeSet(text):
     return int(num)
 
 
-def sayOrThinkWord(text):
-    index = 0
+def thinkForWord(text):
+    index = 6
     word = ''
-    while index < len(text):
-        if text[index] == '_'
-            index += 1
-            while index < len(text):
-                word += text[index]
-                index += 1
+    while text[index] != '_':
+        word += text[index]
         index += 1
     return word
-    
 
-def sayOrThinkForWord(text):
-    index = 0
+
+def sayForWord(text):
+    index = 4
+    word = ''
+    while text[index] != '_':
+        word += text[index]
+        index += 1
+    return word
+
+def sayWord(text):
+    index = 4
     word = ''
     while index < len(text):
-        if text[index] == '_'
-            index += 1
-            while index < text[index] != '_':
-                word += text[index]
-                index += 1
+        word += text[index]
+        index += 1
+    return word
+
+def thinkWord(text):
+    index = 6
+    word = ''
+    while index < len(text):
+        word += text[index]
         index += 1
     return word
 
 def sayOrThinkForSec(text):
-    index = 9
+    index = len(text) - 9
     sec = ''
     while text[index] != '_':
         sec = text[index] + sec
         index -= 1
     return int(sec)
+
 
 def getWaitTime(text):
     index = len(text) - 1
@@ -86,4 +101,30 @@ def getWaitTime(text):
         sec = text[index] + sec
         index -= 1
     return int(sec)
+
+def getKeyToPress(text):
+    index = len(text) - 11
+    key = ''
+    while text[index] != '_':
+        key = text[index] + key
+        index -= 1
+    return key
+
+def extractWordFromIf(text):
+    word = ''
+    index = 3
+    while text[index] != '_':
+        word += text[index]
+        index += 1
+    return word
     
+def extractCharFromIf(text):
+    return text[len(text) - 1]
+
+def getRepeatTimes(text):
+    index = len(text) - 7
+    times = ''
+    while text[index] != '_':
+        times = text[index] + times
+        index -= 1
+    return int(times)

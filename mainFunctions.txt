@@ -1,6 +1,38 @@
-import time
+screen = turtle.Screen()
+screen.title('Project 3 VP')
+ 
+
+pen = turtle.Turtle()
+pen.hideturtle()
+pen.fillcolor('purple')
+
+button_x = 300
+button_y = 250
+buttonLength = 100
+buttonWidth = 50
+
+def drawWord(text):
+    pen.penup()
+    pen.begin_fill()
+    pen.goto(button_x,button_y)
+    pen.goto(button_x + buttonLength, button_y)
+    pen.goto(button_x + buttonLength, button_y + buttonWidth)
+    pen.goto(button_x, button_y + buttonWidth)
+    pen.goto(button_x, button_y)
+    pen.end_fill()
+    pen.write(text, font=("Courier", "14", "bold"), align="left")
+
+# draw the player itself
+t = turtle.Turtle()
+t.penup()
+t.shape('turtle')
+t.shapesize(5,5,5)
+t.color('purple')
+
+
 def moveFunction(text):
     numOfSteps = getNumberOfSteps(text)
+    print(numOfSteps)
     t.fd(numOfSteps)
 
 def turnRightFunction(text):
@@ -18,11 +50,11 @@ def changeXByFunction(text):
 
 def setXFunction(text):
     x = getXOrYToChangeByOrToBeSet(text)
-    t.setx(x)
+    t.setx(t.pos()[0]+x)
 
 def changeYByFunction(text):
     y = getXOrYToChangeByOrToBeSet(text)
-    t.up(y)
+    t.sety(t.pos()[1]+y)
 
 def setYFunction(text):
     y = getXOrYToChangeByOrToBeSet(text)
@@ -30,29 +62,8 @@ def setYFunction(text):
 
 
 
-
-pen = turtle.Turtle()
-pen.hideturtle()
-pen.fillcolor('purple')
-
-button_x = 510
-button_y = 350
-buttonLength = 100
-buttonWidth = 50
-
-def drawWord(text):
-    pen.penup()
-    pen.begin_fill()
-    pen.goto(button_x,button_y)
-    pen.goto(button_x + buttonLength, button_y)
-    pen.goto(button_x + buttonLength, button_y + buttonWidth)
-    pen.goto(button_x, button_y + buttonWidth)
-    pen.goto(button_x, button_y)
-    pen.end_fill()
-    pen.write(text, font=("Courier", "14", "bold"), align="left")
-
 def sayFunction(text):
-    word = sayOrThinkWord(text)
+    word = sayWord(text)
     drawWord(word)
     time.sleep(1)
     pen.clear()
@@ -60,26 +71,27 @@ def sayFunction(text):
 
 
 def sayForFunction(text):
-    word = sayOrThinkForWord(text)
+    word = sayForWord(text)
+    sec = sayOrThinkForSec(text)
+    drawWord(word)
+    time.sleep(sec)
+    pen.clear()
+
+def thinkForFunction(text):
+    word = thinkForWord(text)
     sec = sayOrThinkForSec(text)
     drawWord(word)
     time.sleep(sec)
     pen.clear()
 
 def thinkFunction(text):
-    word = sayOrThinkWord(text)
+    word = thinkWord(text)
     drawWord(word)
     time.sleep(1)
-    pen.clear()
-
-def thinkForFunction(text):
-    word = sayOrThinkForWord(text)
-    sec = sayOrThinkForSec(text)
-    drawWord(word)
-    time.sleep(sec)
     pen.clear()
 
 
 def waitFunction(text):
     sec = getWaitTime(text)
     time.sleep(sec)
+gfClicked = False
