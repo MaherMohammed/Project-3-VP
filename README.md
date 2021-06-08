@@ -26,4 +26,4 @@
 
 # Sample screen:
 
-![image]()
+![image](https://github.com/MaherMohammed/Project-3-VP/blob/main/1.JPG)
